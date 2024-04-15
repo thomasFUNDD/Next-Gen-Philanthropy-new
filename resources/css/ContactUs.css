@@ -1,0 +1,81 @@
+/* ContactUs.css */
+.contact-us-page {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    height: 100VH;
+  }
+  
+  .contact-us-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-us-header {
+    margin-bottom: 20px;
+  }
+  
+  .uta-logo {
+    width: 150px;
+    height: auto;
+  }
+  
+  .contact-us-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .contact-us-form {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .send-message-btn {
+    background-color: #a98e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contact-details {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .contact-item {
+    margin-bottom: 20px;
+  }
+  
+  .contact-item h4 {
+    margin-bottom: 5px;
+  }
+  
+  .contact-item p {
+    margin: 0;
+  }

@@ -1,0 +1,169 @@
+.order-books {
+  padding: 20px;
+}
+
+.order-books h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.book-options p {
+  text-align: center;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.order-books-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-books-content .section.box-shadow h2.text-center,
+.order-books-content .section.box-shadow h5.text-center {
+  text-align: center;
+}
+
+.order-books-content .section.box-shadow h2.text-center {
+  font-weight: 700;
+  color: var(--companyColour);
+  font-size: 40px;
+  line-height: 48px;
+  margin-bottom: 0.5rem;
+}
+
+.order-books-content .section.box-shadow h5.text-center {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.book-options {
+  margin-bottom: 10px;
+}
+
+.inline-container-voucher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.custom-icon-height {
+  height: 38px;
+}
+
+.voucher-select {
+  width: 200px;
+  height: 38px;
+  padding: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  appearance: none;
+}
+
+.voucher-select option {
+  color: #333;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  padding: 8px;
+}
+
+#totalValue {
+  max-width: 30%;
+  text-align: center;
+}
+
+#specialInstruction {
+  height: 100px;
+}
+
+#order-button {
+  margin-top: 20px;
+}
+
+.page-content.order-books {
+  height: auto;
+}
+
+.text-center {
+  color: rgb(96, 112, 128);
+}
+
+span.input-group-text.custom-icon-height {
+  background: var(--companyColour);
+  color: white;
+  padding-top: 8px;
+  width: 10%;
+  padding-left: 9px;
+}
+
+.special-instruction-container .input-group {
+  display: flex;
+  align-items: center;
+}
+
+.special-instruction-container .input-group-text {
+  margin-right: 0px;
+}
+
+.special-instruction-container .flex-grow-1 {
+  flex-grow: 1;
+}
+
+.special-instruction-container label {
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.input-group.align-items-center .input-group-text.custom-icon-height {
+  width: 10%;
+  height: 100px; /* Set the height to match the textarea */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-group.align-items-center textarea.form-control {
+  height: 100px; /* Set the height to match the icon span */
+  resize: none; /* Disable resizing of the textarea */
+}
+
+.contact-us-content {
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.section {
+  display: contents;
+}
+
+.book-options {
+  grid-column: span 1;
+}
+
+#order-button {
+  margin-top: 50px;
+  background-color: black; /* Make the button black */
+  padding: 15px; /* Added padding */
+  color: white; /* Set text color to white for better readability */
+  display: block; /* Make the button a block element */
+  margin-left: auto; /* Auto margin on the left */
+  margin-right: auto; /* Auto margin on the right */
+  font-size: 20px;
+  border-radius: 10px; /* Make the button rounded */
+}

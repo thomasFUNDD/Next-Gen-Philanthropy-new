@@ -1,0 +1,70 @@
+.order-books {
+  padding: 20px;
+}
+
+.order-books h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-books-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+
+.book-options {
+  margin-bottom: 10px;
+}
+
+.inline-container-voucher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.custom-icon-height {
+  height: 38px;
+}
+
+.voucher-select {
+  width: 100px;
+}
+
+.total-value-container {
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+#totalValue {
+  text-align: center;
+}
+
+.special-instruction-container {
+  flex-direction: column;
+}
+
+#specialInstruction {
+  height: 100px;
+}
+
+#order-button {
+  margin-top: 20px;
+}
+
+.section.box-shadow {
+  border: 1px solid #cccccc !important;
+
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e3e6f0;
+  border-radius: 0.35rem;
+}
+
