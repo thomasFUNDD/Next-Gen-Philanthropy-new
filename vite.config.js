@@ -10,8 +10,8 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/js/app/app.jsx', // Update this line
-                'resources/css/app.css',
+                'resources/js/app/BATAPP.jsx', // Update this line
+                'resources/css/BAT/style.css',
             ],
             refresh: true,
         }),
@@ -24,5 +24,5 @@ export default defineConfig({
                 tailwindcss(),
             ],
         },
-    },
+    }
 });

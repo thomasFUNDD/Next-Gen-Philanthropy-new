@@ -2,63 +2,62 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Http\RedirectResponse;
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Inertia\Inertia;
-use Inertia\Response;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 
 class ProfileController extends Controller
 {
-    /**
-     * Display the user's profile form.
-     */
-    public function edit(Request $request): Response
+    public function changePassword(Request $request)
     {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
+        $token = Session::get('token');
+        $oldPassword = $request->input('old_password');
+        $newPassword = $request->input('new_password');
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+            'Content-Type' => 'application/json',
+        ])->put(env('API_URL') . '/client/accounts/password', [
+            'old_password' => $oldPassword,
+            'new_password' => $newPassword,
         ]);
-    }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
+        Log::info('Change password response', [
+            'status' => $response->status(),
+            'body' => $response->body(),
+        ]);
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($response->successful()) {
+            return response()->json(['message' => 'Password changed successfully']);
+        } else {
+            return response()->json(['error' => 'Failed to change password'], $response->status());
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit');
     }
 
-    /**
-     * Delete the user's account.
-     */
-    public function destroy(Request $request): RedirectResponse
+    public function changeEmail(Request $request)
     {
-        $request->validate([
-            'password' => ['required', 'current_password'],
+        $token = Session::get('token');
+        $oldEmail = $request->input('old_email');
+        $newEmail = $request->input('new_email');
+
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer ' . $token,
+            'Content-Type' => 'application/json',
+        ])->put(env('API_URL') . '/client/accounts/email', [
+            'old_email' => $oldEmail,
+            'new_email' => $newEmail,
         ]);
 
-        $user = $request->user();
+        Log::info('Change email response', [
+            'status' => $response->status(),
+            'body' => $response->body(),
+        ]);
 
-        Auth::logout();
-
-        $user->delete();
-
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return Redirect::to('/');
+        if ($response->successful()) {
+            return response()->json(['message' => 'Email changed successfully']);
+        } else {
+            return response()->json(['error' => 'Failed to change email'], $response->status());
+        }
     }
 }

@@ -7,28 +7,26 @@ use App\Http\Controllers\Statement\StatementController;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\SendEmailsController;
-use Illuminate\Foundation\Application;
-use App\Http\Controllers\transactionReceiptController;
+use App\Http\Controllers\TransactionReceiptController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\UnusedVouchersController;
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+// API routes
+Route::prefix('api')->group(function () {
+    Route::get('/getDashboardData', [DashboardController::class, 'getDashboardData']);
+    Route::post('/fetchStatements', [StatementController::class, 'fetchStatement']);
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/checkIsLogin', [LoginController::class, 'checkIsLogin']);
+    Route::get('/transactions', [TransactionsController::class, 'getTransactions']);
+    Route::post('/make-email', [SendEmailsController::class, 'makeEmail']);
+    Route::post('/create-receipt', [TransactionReceiptController::class, 'createTransactionReceipt']);
+        // Add the new routes for changing password and email
+        Route::put('/change-password', [ProfileController::class, 'changePassword']);
+        Route::put('/change-email', [ProfileController::class, 'changeEmail']);
+
+        Route::get('/unused-vouchers', [UnusedVouchersController::class, 'getUnusedVouchers']);
+
 });
 
-Route::get('/getDashboardData', [DashboardController::class, 'getDashboardData']);
-Route::post('/fetchStatements', [StatementController::class, 'fetchStatement']);
-Route::post('/login', [LoginController::class, 'login']);
-Route::post('/checkIsLogin', [LoginController::class, 'checkIsLogin']);
-
-Route::get('/api/transactions', [TransactionsController::class, 'getTransactions']);
-// Add this line within the Route group in web.php
-Route::get('/{any}', [AppController::class, 'index'])->where('any', '.*');
-Route::post('/make-email', [SendEmailsController::class, 'makeEmail']);
-
-Route::post('/create-receipt',[transactionReceiptController::class,'createTransactionReceipt']);
+// Catch-all route to serve the React application
+Route::get('/{path?}', [AppController::class, 'index'])->where('path', '.*');

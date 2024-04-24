@@ -1,0 +1,95 @@
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up, .footer-animate {
+  opacity: 0;
+}
+
+.animate .fade-up, .animate .footer-animate {
+  animation: fadeUp 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.mastercard-image {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-left {
+  opacity: 0;
+}
+
+.animate .slide-left {
+  animation: slideLeft 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-right {
+  opacity: 0;
+}
+
+.animate .slide-right {
+  animation: slideRight 1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  opacity: 0;
+}
+
+.animate .slide-up {
+  animation: slideUp 2s ease-in-out;
+  animation-fill-mode: forwards;
+}
