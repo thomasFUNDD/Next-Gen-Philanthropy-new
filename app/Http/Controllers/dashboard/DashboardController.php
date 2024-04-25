@@ -17,6 +17,8 @@ class DashboardController extends Controller
         Log::info('Tsdfsdfsdfsdata', ['token' => $token]);
 
         $baseUrl = 'https://api.utauk.org:4443/api';
+
+        Log::info('URL', ['url' => $baseUrl]);
         $headers = [
             'Authorization: Bearer ' . $token,
             'Content-Type: application/json',
@@ -30,7 +32,7 @@ class DashboardController extends Controller
             '/client/distributions/charities',
             '/client/vouchers/unused',
             '/webdata/standingorders/unprocessed',
-            '/client/accounts/transactions/filtered?count=15000&type=all',
+            '/client/accounts/transactions/filtered?count=15000&type=all'
         ];
 
         $mh = curl_multi_init();
@@ -100,6 +102,7 @@ class DashboardController extends Controller
         }
 
         curl_multi_close($mh);
+
         Log::info('Processed data', ['data' => $data]);
 
         return response()->json($data);

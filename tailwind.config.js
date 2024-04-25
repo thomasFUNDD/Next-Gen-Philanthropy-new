@@ -20,6 +20,11 @@ module.exports = {
         urbanist: ["Urbanist", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      screens: {
+        'md2': '950px',
+        'lg2': '1300px',
+        'xl2': '1301px'  // Adding a breakpoint for screens larger than 1300px
+      },
       width: {
         66: "66%",
         88: "88%",
@@ -50,7 +55,7 @@ module.exports = {
         babyBlue: {
           light: '#e0f2fe',
           mid: '#bae6fd',
-          dark: '#0ea5e9',
+          dark: '#50b8ee',
         },
         success: {
           50: "#D9FBE6",

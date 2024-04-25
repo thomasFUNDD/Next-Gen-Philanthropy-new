@@ -38,7 +38,7 @@ function LeftSide() {
 
       if (response.ok) {
         localStorage.setItem('token', data.token);
-        navigate('/');
+        navigate('/home');
       } else {
         setError(data.message || 'Login failed');
       }

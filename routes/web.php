@@ -10,6 +10,7 @@ use App\Http\Controllers\SendEmailsController;
 use App\Http\Controllers\TransactionReceiptController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UnusedVouchersController;
+use App\Http\Controllers\DonationController;
 
 // API routes
 Route::prefix('api')->group(function () {
@@ -25,6 +26,7 @@ Route::prefix('api')->group(function () {
         Route::put('/change-email', [ProfileController::class, 'changeEmail']);
 
         Route::get('/unused-vouchers', [UnusedVouchersController::class, 'getUnusedVouchers']);
+        Route::post('/donate', [DonationController::class, 'donate']); // Added route for donation
 
 });
 

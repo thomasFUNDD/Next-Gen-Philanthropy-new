@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     Component: Layout,
     children: [
       {
-        index: true,
+        path: "/home",
         element: <Home />,
       },
       {
@@ -160,9 +160,9 @@ const router = createBrowserRouter([
     element: <Error />,
   },
   {
-    path: "/landing-page",
+    index: true,
     element: <LandingPage />,
-  }
+  },
 ]);
 
 function App() {

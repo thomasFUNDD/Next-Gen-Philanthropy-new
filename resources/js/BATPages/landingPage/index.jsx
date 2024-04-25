@@ -60,8 +60,22 @@ const LandingPage = () => {
           <div className="container mx-auto px-4 py-6 flex justify-between items-center">
             <img src={logoColor} alt="Logo" className="h-8" />
             <ul className="flex space-x-8">
-              <li><a href="#" className="text-gray-800 text-lg hover:text-darkPurple">Product</a></li>
-              <li><a href="#" className="text-gray-800 text-lg hover:text-darkPurple">Solutions</a></li>
+              <li className="relative group">
+                <a href="#" className="text-gray-800 text-lg hover:text-darkPurple">Product</a>
+                <div className="absolute hidden group-hover:block bg-white shadow-lg p-4 rounded-lg">
+                  <a href="#" className="block text-gray-800 hover:text-darkPurple">Product Demo</a>
+                  <a href="#" className="block text-gray-800 hover:text-darkPurple">How Mercury Works</a>
+                  {/* Add more submenu items */}
+                </div>
+              </li>
+              <li className="relative group">
+                <a href="#" className="text-gray-800 text-lg hover:text-darkPurple">Solutions</a>
+                <div className="absolute hidden group-hover:block bg-white shadow-lg p-4 rounded-lg">
+                  <a href="#" className="block text-gray-800 hover:text-darkPurple">Checking & Savings</a>
+                  <a href="#" className="block text-gray-800 hover:text-darkPurple">Credit Card</a>
+                  {/* Add more submenu items */}
+                </div>
+              </li>
               <li><a href="#" className="text-gray-800 text-lg hover:text-darkPurple">Community</a></li>
               <li><a href="#" className="text-gray-800 text-lg hover:text-darkPurple">About</a></li>
             </ul>
